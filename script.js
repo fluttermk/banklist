@@ -292,3 +292,74 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // const bankdeposit=accounts.map(acc=> acc.movements).flat().filter(acc => acc >0).reduce((acc,val) => acc + val);
 // console.log(bankdeposit);
+
+// const bankdeposit=accounts.map(acc => acc.movements ).flat().filter(acc => acc >=1000);
+// console.log(bankdeposit);
+
+// const sum=accounts.flatMap(acc => acc.movements ).reduce((sum,curr)=>{
+//   curr >0?sum.deposits+=curr:sum.withdraws+=curr
+//   return sum
+// },{deposits:0,withdraws:0});
+
+// console.log(sum);
+ 
+
+
+// dogs.forEach(function(detail,i){
+//  detail.foodportion=Math.floor(detail.weight**0.75*2);
+// })
+// console.log(dogs);
+
+// const getdetail=dogs.find(acc=>{
+//   acc.owners.includes('Sarah');
+// }
+//  )
+
+// console.log('sarah dog had ');
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
+  { weight: 18, curFood: 244, owners: ['Joe'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+1
+dogs.forEach(function(detail,i){
+  detail.foodrecp=Math.floor(detail.weight ** 0.75 *28);
+});
+
+// console.log(dogs);
+
+
+// 2
+//
+const sarahfinder=dogs.find(acc => acc.owners.includes('Sarah'));
+console.log(`sarah dogs its eating ${sarahfinder.curFood>=sarahfinder.foodrecp?"too much":"too less"}`);
+
+// 3
+const ownersEattoomuch=dogs.filter(dog => dog.curFood >= dog.foodrecp).flatMap(dog => dog.owners);
+const ownersEatless=dogs.filter(dog => dog.curFood <= dog.foodrecp).flatMap(dog => dog.owners);
+
+
+
+// console.log(ownersEattoomuch);
+// console.log(ownersEatless);
+
+// // console.log(`${ownersEattoomuch.join(" and ")} dogs eat too much`);
+// // console.log(`${ownersEatless.join(' and ')} dog eat less food`);
+
+// const getdog=dogs.find(dog=> dog.curFood === dog.foodrecp);
+// console.log(getdog);
+// const checkEatingOkay = dog =>
+//   dog.curFood < dog.foodrecp * 1.1 && dog.curFood > dog.foodrecp * 0.9;
+
+// console.log(dogs.some(checkEatingOkay));
+
+// // 7.
+// const dogsEatingOkay = dogs.filter(checkEatingOkay);
+// console.log(dogsEatingOkay);
+
+// const copyarray=dogs.slice().sort((a,b)=>a.foodrecp - b.foodrecp)
+// console.log(copyarray);
